@@ -47,39 +47,3 @@ Sit back and wait for the findings to appear in your Slack channel, but please n
 ![alert](https://cdn-images-1.medium.com/max/1600/1*FrFj3hTSIr-dLko6LoF6zw.png)
 
 That’s it! You’re all set, and now have somewhat decent coverage for AWS security issues that may impact you, and have instant alerting in Slack to respond to. Also one more note: I didn’t include many of the available fields from the alerts, since some of the fields may not be actionable directly from Slack, and in most cases you’ll need to pivot to the actual alert to get all the details you’d be interested in. If you have any feature requests for fields to add in here, or if you have any questions or issues, contact me at brian@nullsecure.org or on the Github repo.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
-$ git pull https://github.com/brianwarehime/nights_watch
-$ cd nights_watch
-```
-
-Before running the terraform commands, you'll need to define at least one variable, which is for the Slack webhook that Lambda will post findings to. To generate the Slack webhook, you'll need to navigate to https://`teamname`.slack.com/apps/manage/custom-integrations where `teamname` is your Slack team name. Next, click on Incoming Webhooks > Add Configuration. Enter the details for the channel you want these alerts to go to, and then click on Add Incoming Webhooks Integration. The URL that it generated is what you'll want to enter into the terraform.tfvars file so it can send the GuardDuty alerts there. Just do the following:
-
-```
-$ echo 'slack_webhook = "<webhook_you_just_generated>"' >> terraform.tfvars
-$ terraform init
-$ terraform apply
-```
-
-Those are the basic steps to get this working, however, I recommend checking out the blog post linked above for more information and recommendations.
