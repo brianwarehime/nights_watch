@@ -1,7 +1,7 @@
 # nights_watch
 Easy to use GuardDuty alerting with the help of Terraform and Slack
 
-There is a blog post written about the process for getting started, but if you just want to know the basic pieces to get started, here's what you need to do:
+There is a [blog post](https://medium.com/@brianwarehime_79186/nights-watch-zero-to-hero-with-aws-guardduty-84c8e343c6a4?postPublishedType=initial) written about the process for getting started, but if you just want to know the basic pieces to get started, here's what you need to do:
 
 ```
 $ git pull https://github.com/brianwarehime/nights_watch
