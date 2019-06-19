@@ -35,8 +35,11 @@ Once you have your variables configured, you’ll now be able to start things up
 
 ```
 $ terraform init
+$ make
 $ terraform apply
 ```
+
+First we initialize to grab the necessary providers (in our case, AWS), and then we run make to zip up main.py into a .zip file for Lambda to use. Feel free to review the source code in `main.py` to ensure you trust what it's doing.
 
 After running terraform apply you’ll need to enter the region where you’ll be deploying. Follow the rest of the prompts and enter yes when asked to deploy and you’re all set!
 
