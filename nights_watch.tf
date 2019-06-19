@@ -1,6 +1,177 @@
-// Enabling GuardDuty
+// Setting up the various regions to deploy GuardDuty to all applicable regions
 
-resource "aws_guardduty_detector" "nights_watch_detector" {
+provider "aws" {
+  region = "us-east-1"
+}
+
+provider "aws" {
+  region = "us-east-2"
+  alias = "us-east-2"
+}
+
+provider "aws" {
+  region = "us-west-1"
+  alias = "us-west-1"
+}
+
+provider "aws" {
+  region = "us-west-2"
+  alias = "us-west-2"
+}
+
+provider "aws" {
+  region = "ap-south-1"
+  alias = "ap-south-1"
+}
+
+provider "aws" {
+  region = "ap-northeast-1"
+  alias = "ap-northeast-1"
+}
+
+provider "aws" {
+  region = "ap-northeast-2"
+  alias = "ap-northeast-2"
+}
+
+provider "aws" {
+  region = "ap-southeast-1"
+  alias = "ap-southeast-1"
+}
+
+provider "aws" {
+  region = "ap-southeast-2"
+  alias = "ap-southeast-2"
+}
+
+provider "aws" {
+  region = "ca-central-1"
+  alias = "ca-central-1"
+}
+
+provider "aws" {
+  region = "eu-central-1"
+  alias = "eu-central-1"
+}
+
+provider "aws" {
+  region = "eu-west-1"
+  alias = "eu-west-1"
+}
+
+provider "aws" {
+  region = "eu-west-2"
+  alias = "eu-west-2"
+}
+
+provider "aws" {
+  region = "eu-west-3"
+  alias = "eu-west-3"
+}
+
+provider "aws" {
+  region = "eu-north-1"
+  alias = "eu-north-1"
+}
+
+provider "aws" {
+  region = "sa-east-1"
+  alias = "sa-east-1"
+}
+
+// Enabling GuardDuty for all available regions
+
+resource "aws_guardduty_detector" "nights_watch_detector_us-east-1" {
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_us-east-2" {
+  provider = "aws.us-east-2"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_us-west-1" {
+  provider = "aws.us-west-1"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_us-west-2" {
+  provider = "aws.us-west-2"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_ap-south-1" {
+  provider = "aws.ap-south-1"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_ap-northeast-1" {
+  provider = "aws.ap-northeast-1"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_us-northeast-2" {
+  provider = "aws.ap-northeast-2"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_us-southeast-1" {
+  provider = "aws.ap-southeast-1"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_us-southeast-2" {
+  provider = "aws.ap-southeast-2"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_ca-central-1" {
+  provider = "aws.ca-central-1"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_eu-central-1" {
+  provider = "aws.eu-central-1"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_eu-west-1" {
+  provider = "aws.eu-west-1"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_eu-west-2" {
+  provider = "aws.eu-west-2"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_eu-west-3" {
+  provider = "aws.eu-west-3"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_eu-north-1" {
+  provider = "aws.eu-north-1"
+  enable = "true"
+  finding_publishing_frequency = "ONE_HOUR"
+}
+
+resource "aws_guardduty_detector" "nights_watch_detector_sa-east-1" {
+  provider = "aws.sa-east-1"
   enable = "true"
   finding_publishing_frequency = "ONE_HOUR"
 }
