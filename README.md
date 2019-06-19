@@ -41,7 +41,7 @@ $ terraform apply
 
 First we initialize to grab the necessary providers (in our case, AWS), and then we run make to zip up main.py into a .zip file for Lambda to use. Feel free to review the source code in `main.py` to ensure you trust what it's doing.
 
-After running terraform apply you’ll need to enter the region where you’ll be deploying. Follow the rest of the prompts and enter yes when asked to deploy and you’re all set!
+By default, this will deploy to the `us-east-1` region, however, it will also deploy to all available regions (note: us-gov regions are included in this release) automatically, so every region will send their findings to GuardDuty, and then onto Slack for review.
 
 To check that everything is working properly, navigate to https://us-east-1.console.aws.amazon.com/guardduty/home?region=us-east-1#/settings (make sure us-east-1 is the region you deployed to) and click on Generate Sample Findings. This will generate all the types of findings GuardDuty supports and send them to Slack in about ~5 minutes.
 
