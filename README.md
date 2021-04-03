@@ -13,7 +13,7 @@ Before we get into details, there are a few assumptions I made with this project
 With that being said, let’s dig into the details. To get started, you’ll need to pull down the source code on my Github.
 
 ```
-$ git pull https://github.com/brianwarehime/nights_watch
+$ git clone https://github.com/brianwarehime/nights_watch
 $ cd nights_watch
 ```
 
